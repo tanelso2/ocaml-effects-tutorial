@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Install opam
-      run: bash -c "{ echo '/usr/local/bin'; echo 'y' } | sh <(curl -fsSL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)"
+      run: bash -c "{ echo '/usr/local/bin'; echo 'y'; echo 'y' } | sh <(curl -fsSL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)"
     - name: Opam init
       run : opam init
     - name: opam version
