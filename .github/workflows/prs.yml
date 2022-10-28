@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Install opam
-      run: sudo apt update && sudo apt install -y opam
+      run: bash -c "sh <(curl -fsSL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)"
     - name: Opam init
       run : opam init
     - name: opam version
