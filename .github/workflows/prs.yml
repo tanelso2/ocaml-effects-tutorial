@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Install opam
-      run: apt update && apt install -y opam
+      run: sudo apt update && sudo apt install -y opam
     - name: opam version
       run: opam --version
     - name: Opam switch create and install
