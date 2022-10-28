@@ -16,7 +16,8 @@ jobs:
     - name: Install opam
       run: |
         wget https://github.com/ocaml/opam/releases/download/2.1.3/opam-2.1.3-x86_64-linux
-        cp opam-2.1.3-x86_64-linux /usr/local/bin/opam
+        mv opam-2.1.3-x86_64-linux /usr/local/bin/opam
+        chmod +x /usr/local/bin/opam
       # run: bash -c "{ echo '/usr/local/bin'; echo 'y'; echo 'y'; echo 'y'; echo 'y' } | sh <(curl -fsSL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)"
     - name: Opam init
       run : opam init
