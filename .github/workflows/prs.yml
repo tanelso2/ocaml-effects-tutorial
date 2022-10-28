@@ -10,25 +10,6 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    container:
-      image: ocaml/opam:ubuntu-lts-ocaml-5.0
-    steps:
-    - name: Install git
-      run: |
-        apt update && apt install -y git
     - uses: actions/checkout@v3
-    # - name: Install opam
-    #   run: |
-    #     sudo apt update && sudo apt install -y bubblewrap
-    #     wget https://github.com/ocaml/opam/releases/download/2.1.3/opam-2.1.3-x86_64-linux
-    #     mv opam-2.1.3-x86_64-linux /usr/local/bin/opam
-    #     chmod +x /usr/local/bin/opam
-    #   # run: bash -c "{ echo '/usr/local/bin'; echo 'y'; echo 'y'; echo 'y'; echo 'y' } | sh <(curl -fsSL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)"
-    # - name: Opam init
-    #   run : opam init -y
-    - name: opam version
-      run: opam --version
-    - name: Opam switch create and install
-      run: |
-        opam switch create 5.0.0~beta1
-        opam install ocamlbuild ocamlfind
+    - name: Run docker build
+      run: docker build .
